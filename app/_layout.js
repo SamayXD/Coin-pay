@@ -1,26 +1,35 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
-import { StatusBar } from 'react-native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar } from 'expo-status-bar'
 
 const _layout = () => {
   return (
-  <>
-  <StatusBar barStyle="light-content" backgroundColor="white" />
- <Stack>
-
-    <Stack.Screen name="index" options={{
-        headerShown: false,
-animation: 'fade'
-    }} />
-    <Stack.Screen name="home/index" options={{
-        headerShown: false, animation:'fade'
-    }} />
-
- </Stack></>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container} edges={['top']}>
+        <StatusBar style="dark" />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: 'fade',
+            contentStyle: { backgroundColor: 'black' }
+          }}
+        >
+          <Stack.Screen name="onboarding/index" />
+          <Stack.Screen name="index" />
+          <Stack.Screen name="home/index" />
+        </Stack>
+      </SafeAreaView>
+    </SafeAreaProvider>
   )
 }
 
 export default _layout
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  }
+})
