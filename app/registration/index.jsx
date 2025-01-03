@@ -3,8 +3,16 @@ import { screenWidth, screenHeight, Colors } from "../../src/utils/constants";
 import React from "react";
 import ActionButton from "../../src/components/ActionButton";
 import BackHeader from "../../src/components/BackHeader";
+import { router } from "expo-router";
 
 const Registration = () => {
+  const handleSignUp = () => {
+    router.push("registration/createAc");
+  };
+  const handleLogin = () => {
+    router.push("registration/createAc");
+  };
+
   return (
     <View style={styles.wrapper}>
       <BackHeader />
@@ -23,8 +31,8 @@ const Registration = () => {
       </Text>
 
       <View style={styles.buttonContainer}>
-        <ActionButton text={"Sign up"} type={"primary"} />
-        <ActionButton text={"Log in"} type={"secondary"} />
+        <ActionButton text={"Sign up"} type={"primary"} action={handleSignUp} />
+        <ActionButton text={"Log in"} type={"secondary"} action={handleLogin} />
       </View>
 
       <View style={styles.footer}>

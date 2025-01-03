@@ -17,6 +17,7 @@ const _layout = () => {
           }}
         >
           <Stack.Screen name="registration/createAc" />
+          <Stack.Screen name="registration/verifyPhone" />
           <Stack.Screen name="registration/index" />
           <Stack.Screen name="onboarding/index" />
           <Stack.Screen name="index" />

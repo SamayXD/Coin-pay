@@ -9,6 +9,8 @@ import Animated, {
 import React, { useEffect, useRef } from "react";
 import { screenWidth, screenHeight, Colors } from "../../src/utils/constants";
 import ActionButton from "../../src/components/ActionButton";
+import { ModuleResolutionKind } from "typescript";
+import { router } from "expo-router";
 
 const StageIndicator = ({ currentStage }) => {
   const animations = [
@@ -85,6 +87,9 @@ const OnboardingScreen = () => {
   ];
 
   const handleNext = () => {
+    if (stage === 2) {
+      router.push("/registration");
+    }
     requestAnimationFrame(() => {
       setStage((prev) => (prev === 2 ? 0 : prev + 1));
     });

@@ -14,8 +14,10 @@ import { TextInput, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ActionButton from "../../../src/components/ActionButton";
 import ReactNativeModal from "react-native-modal";
+import { useRouter } from "expo-router";
 
 const CreateAccount = () => {
+  const router = useRouter();
   const [countryCode, setCountryCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
@@ -275,8 +277,8 @@ const CreateAccount = () => {
               text="Yes"
               type="primary"
               action={() => {
-                console.log("yes");
                 toggleModal();
+                router.push("registration/verifyPhone");
               }}
             />
             <ActionButton
