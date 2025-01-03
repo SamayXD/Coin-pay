@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { screenWidth, screenHeight, Colors } from "../../src/utils/constants";
-
-const BackHeader = () => {
+import Ionicons from "@expo/vector-icons/Ionicons";
+const BackHeader = ({ backAction }) => {
   return (
     <View style={styles.header}>
-      <Text>[back]</Text>
+      <TouchableOpacity onPress={backAction}>
+        <Ionicons name="chevron-back" size={24} color={"gray"} />
+      </TouchableOpacity>
     </View>
   );
 };

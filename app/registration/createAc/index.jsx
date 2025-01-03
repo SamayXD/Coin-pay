@@ -25,21 +25,13 @@ const CreateAccount = () => {
 
   const [isModalVisible, setModalVisible] = useState(false);
 
+  const handleBackPress = () => {
+    router.back();
+  };
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
     // console.log("modal visible", isModalVisible);
-  };
-
-  const ModalBody = () => {
-    <View
-      style={{
-        flex: 1,
-      }}
-    >
-      <ReactNativeModal isVisible={isModalVisible}>
-        <Text>Hello!</Text>
-      </ReactNativeModal>
-    </View>;
   };
 
   return (
@@ -52,7 +44,7 @@ const CreateAccount = () => {
         topPadding: screenHeight * 0.07,
       }}
     >
-      <BackHeader />
+      <BackHeader backAction={handleBackPress} />
       <View
         style={{
           marginTop: screenHeight * 0.08,

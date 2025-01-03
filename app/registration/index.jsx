@@ -6,6 +6,10 @@ import BackHeader from "../../src/components/BackHeader";
 import { router } from "expo-router";
 
 const Registration = () => {
+  const handleBackPress = () => {
+    router.back();
+  };
+
   const handleSignUp = () => {
     router.push("registration/createAc");
   };
@@ -15,7 +19,7 @@ const Registration = () => {
 
   return (
     <View style={styles.wrapper}>
-      <BackHeader />
+      <BackHeader backAction={handleBackPress} />
 
       <View style={styles.imageContainer}>
         <Image

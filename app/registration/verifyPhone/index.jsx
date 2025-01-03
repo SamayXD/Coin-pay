@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import BackHeader from "../../../src/components/BackHeader";
 import {
@@ -13,10 +14,32 @@ import {
   screenWidth,
 } from "../../../src/utils/constants";
 import ActionButton from "../../../src/components/ActionButton";
+import { router } from "expo-router";
+import ReactNativeModal from "react-native-modal";
 
 const VerifyPhone = () => {
   const inputRefs = useRef([]);
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const handleVerification = async () => {
+    try {
+      setModalVisible(true);
+      await sleep(1500);
+      setModalVisible(false);
+      await sleep(200); // Small buffer for modal animation
+      router.navigate("onboarding");
+    } catch (error) {
+      console.error("Navigation error:", error);
+      setModalVisible(false);
+    }
+  };
+
+  const handleBackPress = () => {
+    router.back();
+  };
 
   const handleChange = (text, index) => {
     const newOtp = [...otp];
@@ -42,7 +65,7 @@ const VerifyPhone = () => {
         backgroundColor: "#FFFFFF",
       }}
     >
-      <BackHeader />
+      <BackHeader backAction={handleBackPress} />
       <View
         style={{
           marginTop: screenHeight * 0.08,
@@ -142,8 +165,41 @@ const VerifyPhone = () => {
           marginBottom: screenHeight * 0.1,
         }}
       >
-        <ActionButton text="Verify" type="primary" />
+        <ActionButton
+          text="Verify"
+          type="primary"
+          action={handleVerification}
+        />
       </View>
+      <ReactNativeModal
+        isVisible={isModalVisible}
+        onBackdropPress={handleVerification}
+      >
+        <View
+          style={{
+            // height: screenHeight * 0.1,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "white",
+            borderRadius: 20,
+            padding: screenWidth * 0.1,
+          }}
+        >
+          <ActivityIndicator size="large" color={Colors.primaryAccent} />
+          <Text
+            style={{
+              fontSize: 16,
+              lineHeight: 24,
+              fontFamily: "Poppins",
+              textAlign: "center",
+              width: screenWidth * 0.8,
+              marginTop: screenHeight * 0.02,
+            }}
+          >
+            Please wait...
+          </Text>
+        </View>
+      </ReactNativeModal>
     </View>
   );
 };
