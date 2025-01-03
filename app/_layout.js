@@ -16,6 +16,7 @@ const _layout = () => {
             contentStyle: { backgroundColor: 'black' }
           }}
         >
+          <Stack.Screen name="registration/createAc" />
           <Stack.Screen name="registration/index" />
           <Stack.Screen name="onboarding/index" />
           <Stack.Screen name="index" />

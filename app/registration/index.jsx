@@ -2,13 +2,12 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { screenWidth, screenHeight, Colors } from "../../src/utils/constants";
 import React from "react";
 import ActionButton from "../../src/components/ActionButton";
+import BackHeader from "../../src/components/BackHeader";
 
 const Registration = () => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.header}>
-        <Text>[back]</Text>
-      </View>
+      <BackHeader />
 
       <View style={styles.imageContainer}>
         <Image
@@ -49,15 +48,6 @@ const styles = StyleSheet.create({
     padding: screenWidth * 0.05,
     justifyContent: "center",
     alignItems: "center",
-  },
-  header: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: screenWidth,
-    padding: 20,
-    borderBottomColor: "#D1D1D6",
-    borderBottomWidth: 2,
   },
   imageContainer: {
     justifyContent: "center",
