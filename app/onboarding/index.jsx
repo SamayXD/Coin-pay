@@ -32,6 +32,7 @@ const StageIndicator = ({ currentStage }) => {
       opacities[index].value = withSpring(index === currentStage ? 1 : 0.5, {
         damping: 50,
         stiffness: 50,
+        duration: 500,
       });
     });
   }, [currentStage]);
@@ -112,7 +113,7 @@ const OnboardingScreen = () => {
       <Animated.Text
         entering={SlideInRight.duration(600)}
         key={`${stage}`}
-        exiting={SlideOutLeft.duration(500).delay(100)}
+        exiting={SlideOutLeft.duration(400).delay(100)}
         style={{
           fontSize: 34,
           fontWeight: 600,
@@ -159,6 +160,7 @@ const styles = StyleSheet.create({
   },
   inactiveDot: {
     width: 37,
-    backgroundColor: "#D1D1D6",
+    // backgroundColor: "#D1D1D6",
+    backgroundColor: Colors.primaryAccent,
   },
 });

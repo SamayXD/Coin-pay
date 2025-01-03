@@ -13,6 +13,8 @@ const ActionButton = ({ type, text, action }) => {
         width: "100%",
         alignSelf: "center",
         alignItems: "center",
+        borderColor: thisType === "primary" ? "#304FFE" : Colors.primaryAccent,
+        borderWidth: 2,
       }}
     >
       <Text

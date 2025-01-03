@@ -3,7 +3,7 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
-
+import { Colors } from '../src/utils/constants'
 const _layout = () => {
   return (
     <SafeAreaProvider>
@@ -16,6 +16,7 @@ const _layout = () => {
             contentStyle: { backgroundColor: 'black' }
           }}
         >
+          <Stack.Screen name="registration/index" />
           <Stack.Screen name="onboarding/index" />
           <Stack.Screen name="index" />
           <Stack.Screen name="home/index" />

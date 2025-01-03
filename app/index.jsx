@@ -7,7 +7,7 @@ const index = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.navigate("onboarding");
+      router.navigate("registration");
     }, 300);
 
     return () => clearTimeout(timeout);
