@@ -25,6 +25,8 @@ const _layout = () => {
           <Stack.Screen name="account-setup/PersonalInfo" />
           <Stack.Screen name="account-setup/CountryPick" />
 
+          <Stack.Screen name="account-verification" />
+
           <Stack.Screen name="onboarding/index" />
 
 

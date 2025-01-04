@@ -7,9 +7,11 @@ const index = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      // router.navigate("registration/createAc");
       // router.navigate("onboarding");
-      router.navigate("account-setup/CountryPick");
+
+      // router.navigate("registration/createAc");
+      // router.navigate("account-setup/CountryPick");
+      router.navigate("account-verification");
     }, 300);
 
     return () => clearTimeout(timeout);

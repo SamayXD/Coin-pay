@@ -57,7 +57,7 @@ const AccountSetup = () => {
   };
 
   const handleNextClick = () => {
-    router.navigate("account-setup/AddressPage");
+    router.navigate("account-verification");
   };
 
   return (
