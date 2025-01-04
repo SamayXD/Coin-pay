@@ -19,7 +19,15 @@ const _layout = () => {
           <Stack.Screen name="registration/createAc" />
           <Stack.Screen name="registration/verifyPhone" />
           <Stack.Screen name="registration/index" />
+
+          <Stack.Screen name="account-setup" />
+          <Stack.Screen name="account-setup/AddressPage" />
+          <Stack.Screen name="account-setup/PersonalInfo" />
+          <Stack.Screen name="account-setup/CountryPick" />
+
           <Stack.Screen name="onboarding/index" />
+
+
           <Stack.Screen name="index" />
           <Stack.Screen name="home/index" />
         </Stack>

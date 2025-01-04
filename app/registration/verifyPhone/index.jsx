@@ -30,7 +30,7 @@ const VerifyPhone = () => {
       await sleep(1500);
       setModalVisible(false);
       await sleep(200); // Small buffer for modal animation
-      router.navigate("onboarding");
+      router.navigate("account-setup");
     } catch (error) {
       console.error("Navigation error:", error);
       setModalVisible(false);
@@ -39,6 +39,7 @@ const VerifyPhone = () => {
 
   const handleBackPress = () => {
     router.back();
+    router.navigate("registration/createAc");
   };
 
   const handleChange = (text, index) => {
