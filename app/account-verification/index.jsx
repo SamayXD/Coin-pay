@@ -40,7 +40,7 @@ const AccountVerification = () => {
         setCurrentStage((prev) => prev + 1);
       } else {
         clearInterval(timer);
-        // router.push("/success");
+        router.push("account-verification/pin-setup");
       }
     }, 2000);
 

@@ -66,7 +66,7 @@ const VerifyPhone = () => {
         backgroundColor: "#FFFFFF",
       }}
     >
-      <BackHeader backAction={handleBackPress} />
+      <BackHeader backAction={handleBackPress} stage={1} />
       <View
         style={{
           marginTop: screenHeight * 0.08,

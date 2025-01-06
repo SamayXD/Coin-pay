@@ -19,7 +19,7 @@ const Registration = () => {
 
   return (
     <View style={styles.wrapper}>
-      <BackHeader backAction={handleBackPress} />
+      <BackHeader backAction={handleBackPress} stage={1} />
 
       <View style={styles.imageContainer}>
         <Image

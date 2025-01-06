@@ -26,12 +26,20 @@ const _layout = () => {
           <Stack.Screen name="account-setup/CountryPick" />
 
           <Stack.Screen name="account-verification" />
+          <Stack.Screen name="account-verification/pin-setup" />
 
           <Stack.Screen name="onboarding/index" />
 
 
           <Stack.Screen name="index" />
-          <Stack.Screen name="home/index" />
+          
+          
+          <Stack.Screen name="home" />
+          {/* <Stack.Screen name="home/main-home" />
+          <Stack.Screen name="home/chat" />
+          <Stack.Screen name="home/scan" />
+          <Stack.Screen name="home/profile" />
+          <Stack.Screen name="home/stats" /> */}
         </Stack>
       </SafeAreaView>
     </SafeAreaProvider>

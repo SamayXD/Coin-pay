@@ -44,7 +44,7 @@ const CreateAccount = () => {
         topPadding: screenHeight * 0.07,
       }}
     >
-      <BackHeader backAction={handleBackPress} />
+      <BackHeader backAction={handleBackPress} stage={1} />
       <View
         style={{
           marginTop: screenHeight * 0.08,
