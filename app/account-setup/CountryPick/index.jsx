@@ -252,6 +252,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     padding: 20,
     maxHeight: screenHeight * 0.7,
+    minHeight: screenHeight * 0.5,
   },
   searchInput: {
     borderWidth: 1,
